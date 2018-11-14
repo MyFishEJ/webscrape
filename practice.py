@@ -33,15 +33,15 @@ for item in pages:
     #pulls text from all instances of <a> within BodyText div
     artist_name_list_items = artist_name_list.find_all('a')
 
-        #for loop to print out all artists names
-        for artist_name in artist_name_list_items:
-            names = artist_name.contents[0]
-            #uses beautiful soup's get(href) method to get url of page
-            links = 'https://web.archive.org' + artist_name.get('href')
+    #for loop to print out all artists names
+    for artist_name in artist_name_list_items:
+        names = artist_name.contents[0]
+        #uses beautiful soup's get(href) method to get url of page
+        links = 'https://web.archive.org' + artist_name.get('href')
 
-            #print(names) if i want to print names directly on commandline
-            #print(links) ^ but links
-            f.writerow([names, links])
+        #print(names) if i want to print names directly on commandline
+        #print(links) ^ but links
+        f.writerow([names, links])
 
 
 
